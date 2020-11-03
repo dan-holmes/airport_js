@@ -25,7 +25,8 @@ describe("Airport", function () {
   it("won't land a plane if at capacity", function () {
     airport.land(plane)
     expect(plane.land).toHaveBeenCalled
-    expect(airport.land(plane2)).toThrow(new Error("Airport is full."))
+    console.log('test')
+    expect(function() {airport.land(plane2)}).toThrowError(/Airport is full/)
   })
 
 });

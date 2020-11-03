@@ -10,4 +10,9 @@ class Plane {
   takeoff() {
     this.airport = null
   }
+
+  isFlying() {
+    return this.airport == null
+  }
+
 }

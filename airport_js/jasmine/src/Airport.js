@@ -1,4 +1,7 @@
+const CAPACITY = 10;
+
 class Airport {
+
   constructor() {
     this.planes = []
   }
@@ -7,8 +10,8 @@ class Airport {
     if (this.isFull()) {
       throw new Error('Airport is full.')
     }
-    plane.land(self)
     this.planes.push(plane)
+    return plane.land(self)
   }
 
   takeoff(plane) {
@@ -18,6 +21,6 @@ class Airport {
   }
 
   isFull() {
-    return this.planes.length == 1
+    return this.planes.length == CAPACITY
   }
 }
